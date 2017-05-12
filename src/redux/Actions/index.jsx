@@ -1,26 +1,26 @@
-const REQUEST_MENUS = 'REQUEST_MENUS'
+const RECEIVE_MENUS = 'RECEIVE_MENUS'
 
 //系统菜单状态加载
-export const menusAction = (data) => {
+export const recieve_menus = (data) => {
     return{
-        type:REQUEST_MENUS,
+        type:RECEIVE_MENUS,
         data,
     }
 }
 
 function fetchPosts() {
     return dispatch => {
-        return fetch('../../containers/layout/menus.json')
+        return fetch('./menus.json')
             .then((res) => { console.log(res.status); return res.json() })
             .then((data) => {
-                dispatch(getSuccess(data))
+                dispatch(menusAction(data))
             })
             .catch((e) => { console.log(e.message) })
-        }
+    }
 }
 
-// 这里的方法返回一个函数进行异步操作
-export function fetchPostsIfNeeded() {
+// 返回一个函数进行异步操作
+export function fetchMenus() {
     return (dispatch, getState) => {
         return dispatch(fetchPosts())
     }

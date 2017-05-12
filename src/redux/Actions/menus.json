@@ -1,0 +1,10 @@
+[
+	{"Id":1, "MenuName":"系统管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"",
+		"chindren":[  
+			{"Id":5, "MenuName":"用户管理", "ParentId":1, "MenuUrl":" ", "MenuIcon":""}
+		]
+	},
+	{"Id":2, "MenuName":"会员管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":""},
+	{"Id":3, "MenuName":"工单管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":""},
+	{"Id":4, "MenuName":"账目管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":""}
+]

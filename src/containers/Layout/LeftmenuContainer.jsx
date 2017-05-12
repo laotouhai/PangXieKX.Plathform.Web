@@ -9,20 +9,20 @@ class LeftMenuContainer extends React.Component {
     super(props);
   }
   
-  componentDidMount() {
-    
+  componentDidMount() {//获取数据
+    this.props.fetchMenus();
   }
+
   render() {
-    const { menus } = this.props.menus
     return(
-            <LeftMenu menus={menus} />
-          );
-  }
+            <LeftMenu menus={this.props.menus} />
+        );
+    }
 }
 
 const getMenus = state => {
     return {
-        menus: state.updateMenus
+        menus: state.leftmenu.data
     }
 }
 

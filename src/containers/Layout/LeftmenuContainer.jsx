@@ -13,7 +13,7 @@ class LeftMenuContainer extends React.Component {
     
   }
   render() {
-    const { menus } = this.props
+    const { menus } = this.props.menus
     return(
             <LeftMenu menus={menus} />
           );

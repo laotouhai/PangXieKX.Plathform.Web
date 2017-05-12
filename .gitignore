@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# 忽略当前目录下的node_modules文件夹
+/node_modules

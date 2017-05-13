@@ -13,7 +13,7 @@ function fetchPosts() {
         return fetch('./menus.json')
             .then((res) => { console.log(res.status); return res.json() })
             .then((data) => {
-                dispatch(menusAction(data))
+                dispatch(recieve_menus(data))
             })
             .catch((e) => { console.log(e.message) })
     }

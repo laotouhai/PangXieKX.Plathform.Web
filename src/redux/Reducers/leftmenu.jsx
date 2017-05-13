@@ -9,7 +9,7 @@ export default function leftmenu(state = initialState, action = {}){
         case REQUEST_MENUS:
             return state.set('isFetching',true);
         case RECEIVE_MENUS:
-            return Object.assign({}, state, { data: action.json, isFetching : false })
+            return Object.assign({}, state, { data: action.data, isFetching : false })
         default:
             return state;
     }

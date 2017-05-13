@@ -59,7 +59,8 @@ class LeftMenu extends React.Component {
                     <li className="active">
                         <a href={e.MenuUrl}>
                             <i className={e.MenuIcon}></i>
-                            <span className="menu-text"> {e.MenuName}} </span>
+                            <span className="menu-text"> {e.MenuName} </span>
+                            <b className="arrow icon-angle-down"></b>
                         </a>
                     </li>
                     )}

@@ -10,7 +10,12 @@ var config = {
     },
     module: {
         loaders: [
-            { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015', 'react'] } }, //同时支持es6 react
+            { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', 
+                query: { 
+                    plugins: ["transform-runtime"],
+                    presets: ['es2015', 'stage-0'] 
+                } 
+            }, //同时支持es6 react
             { test: /\.css$/, loader: "style!css" },
             { test: /\.scss$/, loader: "style!css!sass" }, //sass加载器
         ]

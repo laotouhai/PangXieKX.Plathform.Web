@@ -1,19 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 class LeftMenu extends React.Component {
     constructor(props) {
         super(props);
     }
-    
+
     render(){
         return(
             <div className="sidebar" id="sidebar">
-                <script type="text/javascript">
-						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
-                </script>
-
                 <div className="sidebar-shortcuts" id="sidebar-shortcuts">
                     <div className="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
                         <button className="btn btn-success">
@@ -44,23 +38,14 @@ class LeftMenu extends React.Component {
                     </div>
                 </div>
 
-                {/*<ul className="nav nav-list">
-                    <li className="active">
-                        <a href="/">
-                            <i className="icon-dashboard"></i>
-                            <span className="menu-text"> 控制台 </span>
-                        </a>
-                    </li>
-                </ul>*/}
-
                 <ul className="nav nav-list">
                     {
                     this.props.menus.map((e, index) => 
-                    <li className="active">
-                        <a href={e.MenuUrl}>
+                    <li className={index == 0 ? "active" : ""}>
+                        <a href={e.chindren != undefined ? "#" : e.MenuUrl} className={e.chindren != undefined ? "" : "dropdown-toggle"}>
                             <i className={e.MenuIcon}></i>
                             <span className="menu-text"> {e.MenuName} </span>
-                            <b className="arrow icon-angle-down"></b>
+                            {e.chindren != undefined ? <b className="arrow icon-angle-down"></b> : ""}
                         </a>
                     </li>
                     )}
@@ -69,10 +54,6 @@ class LeftMenu extends React.Component {
                 <div className="sidebar-collapse" id="sidebar-collapse">
                     <i className="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
                 </div>
-
-                <script type="text/javascript">
-                    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
-                </script>
             </div>
         );
     }

@@ -1,11 +1,11 @@
 [
-	{"Id":1, "MenuName":"控制面板", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-dashboard"},
+	{"Id":1, "MenuName":"控制面板", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-dashboard","children":[]},
 	{"Id":2, "MenuName":"系统管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-cog",
-		"chindren":[  
-			{"Id":5, "MenuName":"用户管理", "ParentId":2, "MenuUrl":" ", "MenuIcon":""}
+		"children":[  
+			{"Id":5, "MenuName":"用户管理", "ParentId":2, "MenuUrl":" ", "MenuIcon":"","children":[]}
 		]
 	},
-	{"Id":3, "MenuName":"会员管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-user"},
-	{"Id":4, "MenuName":"工单管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-file"},
-	{"Id":5, "MenuName":"账目管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-list-alt"}
+	{"Id":3, "MenuName":"会员管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-user","children":[]},
+	{"Id":4, "MenuName":"工单管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-file","children":[]},
+	{"Id":5, "MenuName":"账目管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-list-alt","children":[]}
 ]

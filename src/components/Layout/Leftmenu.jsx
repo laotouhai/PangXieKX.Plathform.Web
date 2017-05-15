@@ -4,7 +4,40 @@ class LeftMenu extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    /**
+    * 递归生成菜单树
+    * @param menutrees
+    * @returns {Array}
+    */
+    generateMenu(menutrees,length) {
+        let vdom = [];
+        
+        if (menutrees instanceof Array) {
+            let list = [];
+            for (var item of menutrees) {
+                list.push(this.generateMenu(item,length));
+            }
+            if(menutrees.length > 0) {
+                vdom.push(
+                    <ul key={new Date().getTime()} className={menutrees.length == length ? "nav nav-list" : "submenu"}>
+                        {list}
+                    </ul>
+                );
+            }
+        } else {
+            vdom.push(
+                <li key={new Date().getTime()} className={menutrees.Id == 1 ? "active" : ""}>
+                    <a href={menutrees.children.length>0 ? "#" : menutrees.MenuUrl} className={menutrees.children.length>0 ? "dropdown-toggle" : ""}>
+                        <i className={menutrees.MenuIcon}></i>
+                        <span className="menu-text"> {menutrees.MenuName} </span>
+                        {menutrees.children.length>0 ? <b className="arrow icon-angle-down"></b> : ""}
+                    </a>
+                    {this.generateMenu(menutrees.children,length)}
+                </li>
+            );
+        }
+        return vdom;
+    }
     render(){
         return(
             <div className="sidebar" id="sidebar">
@@ -38,19 +71,7 @@ class LeftMenu extends React.Component {
                     </div>
                 </div>
 
-                <ul className="nav nav-list">
-                    {
-                    this.props.menus.map((e, index) => 
-                    <li className={index == 0 ? "active" : ""}>
-                        <a href={e.chindren != undefined ? "#" : e.MenuUrl} className={e.chindren != undefined ? "" : "dropdown-toggle"}>
-                            <i className={e.MenuIcon}></i>
-                            <span className="menu-text"> {e.MenuName} </span>
-                            {e.chindren != undefined ? <b className="arrow icon-angle-down"></b> : ""}
-                        </a>
-                    </li>
-                    )}
-                </ul>
-
+                {this.generateMenu(this.props.menus,this.props.menus.length)}
                 <div className="sidebar-collapse" id="sidebar-collapse">
                     <i className="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
                 </div>

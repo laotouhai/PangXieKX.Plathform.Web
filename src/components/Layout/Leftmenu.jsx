@@ -1,9 +1,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import LeftMenuRun from './Leftmenu.run'
+
 class LeftMenu extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    /*    
+    渲染完毕后绑定事件
+    */    
+    componentDidUpdate() {
+        LeftMenuRun();
+    }
+
     /**
     * 递归生成菜单树
     * @param menutrees
@@ -70,7 +80,7 @@ class LeftMenu extends React.Component {
                         <span className="btn btn-danger"></span>
                     </div>
                 </div>
-
+                
                 {this.generateMenu(this.props.menus,this.props.menus.length)}
                 <div className="sidebar-collapse" id="sidebar-collapse">
                     <i className="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>

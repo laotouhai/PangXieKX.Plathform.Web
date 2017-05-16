@@ -25,7 +25,12 @@ var config = {
     },
     plugins: [
         //new webpack.NoErrorsPlugin(), //允许错误不打断程序
-        new webpack.HotModuleReplacementPlugin() //webpack热替换插件
+        new webpack.HotModuleReplacementPlugin(), //webpack热替换插件
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
     ],
     devtool: 'source-map'
 };

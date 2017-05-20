@@ -10,7 +10,7 @@ export const recieve_menus = (data) => {
 
 function fetchPosts() {
     return dispatch => {
-        return fetch('./menus.json')
+        return fetch('http://localhost:18347/api/MemberMenu')
             .then((res) => { console.log(res.status); return res.json() })
             .then((data) => {
                 dispatch(recieve_menus(data))

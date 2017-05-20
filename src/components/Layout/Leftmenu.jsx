@@ -37,12 +37,12 @@ class LeftMenu extends React.Component {
         } else {
             vdom.push(
                 <li key={new Date().getTime()} className={menutrees.Id == 1 ? "active" : ""}>
-                    <a href={menutrees.children.length>0 ? "#" : menutrees.MenuUrl} className={menutrees.children.length>0 ? "dropdown-toggle" : ""}>
+                    <a href={menutrees.Children.length>0 ? "#" : menutrees.MenuUrl} className={menutrees.Children.length>0 ? "dropdown-toggle" : ""}>
                         <i className={menutrees.MenuIcon}></i>
                         <span className="menu-text"> {menutrees.MenuName} </span>
-                        {menutrees.children.length>0 ? <b className="arrow icon-angle-down"></b> : ""}
+                        {menutrees.Children.length>0 ? <b className="arrow icon-angle-down"></b> : ""}
                     </a>
-                    {this.generateMenu(menutrees.children,length)}
+                    {this.generateMenu(menutrees.Children,length)}
                 </li>
             );
         }

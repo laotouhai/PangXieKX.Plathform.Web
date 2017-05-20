@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1ae9817ede004c1544a3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "c1912380a0e7748f6aee"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -12496,6 +12496,11 @@ var LeftMenu = function (_React$Component) {
         return (0, _possibleConstructorReturn3.default)(this, (LeftMenu.__proto__ || (0, _getPrototypeOf2.default)(LeftMenu)).call(this, props));
     }
 
+    /*    
+    渲染完毕后绑定事件
+    */
+
+
     (0, _createClass3.default)(LeftMenu, [{
         key: 'componentDidUpdate',
         value: function componentDidUpdate() {
@@ -12553,7 +12558,7 @@ var LeftMenu = function (_React$Component) {
                     { key: new Date().getTime(), className: menutrees.Id == 1 ? "active" : "" },
                     _react2.default.createElement(
                         'a',
-                        { href: menutrees.children.length > 0 ? "#" : menutrees.MenuUrl, className: menutrees.children.length > 0 ? "dropdown-toggle" : "" },
+                        { href: menutrees.Children.length > 0 ? "#" : menutrees.MenuUrl, className: menutrees.Children.length > 0 ? "dropdown-toggle" : "" },
                         _react2.default.createElement('i', { className: menutrees.MenuIcon }),
                         _react2.default.createElement(
                             'span',
@@ -12562,9 +12567,9 @@ var LeftMenu = function (_React$Component) {
                             menutrees.MenuName,
                             ' '
                         ),
-                        menutrees.children.length > 0 ? _react2.default.createElement('b', { className: 'arrow icon-angle-down' }) : ""
+                        menutrees.Children.length > 0 ? _react2.default.createElement('b', { className: 'arrow icon-angle-down' }) : ""
                     ),
-                    this.generateMenu(menutrees.children, length)
+                    this.generateMenu(menutrees.Children, length)
                 ));
             }
             return vdom;
@@ -20802,7 +20807,7 @@ var recieve_menus = exports.recieve_menus = function recieve_menus(data) {
 
 function fetchPosts() {
     return function (dispatch) {
-        return fetch('./menus.json').then(function (res) {
+        return fetch('http://localhost:18347/api/MemberMenu').then(function (res) {
             console.log(res.status);return res.json();
         }).then(function (data) {
             dispatch(recieve_menus(data));

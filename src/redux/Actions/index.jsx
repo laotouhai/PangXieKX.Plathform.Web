@@ -1,16 +1,19 @@
-const RECEIVE_MENUS = 'RECEIVE_MENUS'
+import * as types from '../constants/LeftmenuTypes';
+
+const apiUrl = __API_URL__;
+const memberMenuApiUrl = apiUrl + '/MemberMenu';
 
 //系统菜单状态加载
 export const recieve_menus = (data) => {
     return{
-        type:RECEIVE_MENUS,
+        type:types.RECEIVE_MENUS,
         data,
     }
 }
 
 function fetchPosts() {
     return dispatch => {
-        return fetch('http://localhost:18347/api/MemberMenu')
+        return fetch(memberMenuApiUrl)
             .then((res) => { console.log(res.status); return res.json() })
             .then((data) => {
                 dispatch(recieve_menus(data))

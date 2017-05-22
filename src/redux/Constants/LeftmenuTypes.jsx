@@ -1,0 +1,1 @@
+export const RECEIVE_MENUS = 'RECEIVE_MENUS'

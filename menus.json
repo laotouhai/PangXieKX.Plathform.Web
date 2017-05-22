@@ -2,7 +2,7 @@
 	{"Id":1, "MenuName":"控制面板", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-dashboard","children":[]},
 	{"Id":2, "MenuName":"系统管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-cog",
 		"children":[  
-			{"Id":5, "MenuName":"用户管理", "ParentId":2, "MenuUrl":" ", "MenuIcon":"","children":[]}
+			{"Id":6, "MenuName":"用户管理", "ParentId":2, "MenuUrl":" ", "MenuIcon":"","children":[]}
 		]
 	},
 	{"Id":3, "MenuName":"会员管理", "ParentId":0, "MenuUrl":" ", "MenuIcon":"icon-user","children":[]},

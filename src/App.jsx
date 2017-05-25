@@ -20,7 +20,7 @@ ReactDOM.render(
             <Router>
                 <Route path="/" component={Base} />
             </Router>
-            <DevTools />
+            {/*<DevTools />*/}
         </div>
     </Provider>,
     document.getElementById("app")

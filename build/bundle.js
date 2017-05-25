@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7d85c4a363d691aff976"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "41429e2cad73f5d16321"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -20779,8 +20779,7 @@ _reactDom2.default.render(_react2.default.createElement(
             _reactRouterDom.BrowserRouter,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Base2.default })
-        ),
-        _react2.default.createElement(_DevTools2.default, null)
+        )
     )
 ), document.getElementById("app"));
 
@@ -20803,7 +20802,7 @@ var types = _interopRequireWildcard(_LeftmenuTypes);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var apiUrl = "//http://localhost:18347/api/";
+var apiUrl = "http://localhost:18347/api";
 var memberMenuApiUrl = apiUrl + '/MemberMenu';
 
 //系统菜单状态加载

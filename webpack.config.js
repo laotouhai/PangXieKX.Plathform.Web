@@ -25,7 +25,7 @@ var config = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            __API_URL__: JSON.stringify(process.env.API_URL || '//http://localhost:18347/api/')
+            __API_URL__: JSON.stringify(process.env.API_URL || 'http://localhost:18347/api')
         }),
         //new webpack.NoErrorsPlugin(), //允许错误不打断程序
         new webpack.HotModuleReplacementPlugin(), //webpack热替换插件
